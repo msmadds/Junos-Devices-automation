@@ -83,7 +83,7 @@ def main():
     #uncomment below to input the username
     #username = input("Enter the username: ")
     password = getpass.getpass()
-    port = 'PORT' #insert the netconf port incase the netconf was configured to use nondefault port, default port for netconf is 
+    port = 'PORT' #insert the netconf port incase the netconf was configured to use nondefault port, default port for netconf is 830
     #open the host_file
     with open(host_file, 'r') as f:
             hosts = f.readlines()
