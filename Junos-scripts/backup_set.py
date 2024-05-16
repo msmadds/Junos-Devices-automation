@@ -40,7 +40,7 @@ def config_check(host,username,password,port):
         with Device(host=host, user=username, password=password, port=port) as dev:
             data= dev.rpc.get_config(options= {'format':'set'})
             date = datetime.now().strftime('%D').replace('/','_')
-            host_ = get_hostname(host,'madeline', password, port)
+            host_ = get_hostname(host,username, password, port)
             try:
                 os.makedirs(datetime.now().strftime('%D').replace('/','_'))
                 config_file = datetime.now().strftime('%D').replace('/','_') +'/'+  host_+'_'+date+'.txt'
