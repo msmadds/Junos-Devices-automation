@@ -6,14 +6,14 @@ import getpass
 
 def get_license_info(host, username, password,port):
     with Device(host=host, user=username, password=password, port=port, gather_facts=False) as dev:
-        # rpc call to return object in text fformat, and the data type for op will be  bytes
+        # rpc call to return object in text format, and the data type for op will be  bytes
         output= dev.rpc.get_license_summary_information({'format':'text'})
         # To print object returned as bytes, uncomment below line (etree.tostring)
         #pprint (etree.tostring(output))
         #to assign the output to a variable so we can manipulate the output
         license_ = etree.tostring(output)
-        ot = str(license_)
-        output_=ot.split('\\n')
+        output = str(license_)
+        output_=output.split('\\n')
         for line in output_:
             print(line)
     
